@@ -1,0 +1,56 @@
+# Evaluation configuration for LongBench
+# TODO: Complete with actual evaluation parameters
+
+# Model configuration
+base_model_config: "configs/base_qwen2_7b.yaml"
+clv_adapter_path: "artifacts/clv_lora_adapter.pt"
+clv_map_path: "artifacts/clv_map.json"
+clv_tokenizer_path: "artifacts/clv_tokenizer_added.json"
+
+# Evaluation mode
+mode: "clv"  # Options: "baseline", "clv"
+# TODO: Add baseline model path if evaluating baseline separately
+
+# LongBench dataset
+dataset_name: "LongBench"  # TODO: Specify exact dataset name/version
+# TODO: Add dataset path or Hugging Face identifier
+dataset_split: "test"  # TODO: Specify split
+
+# Tasks to evaluate
+# TODO: Add specific LongBench tasks (single-doc QA, multi-doc QA, summarization)
+tasks: []
+# Example:
+# tasks:
+#   - "single_doc_qa"
+#   - "multi_doc_qa"
+#   - "summarization"
+
+# Metrics
+metrics: ["em", "f1", "rouge"]  # Exact match, F1, ROUGE
+# TODO: Add task-specific metrics
+
+# Generation parameters
+max_new_tokens: 512  # TODO: Adjust based on task
+temperature: 0.0  # Deterministic generation
+top_p: 1.0
+do_sample: false
+
+# Compression settings (for CLV mode)
+enable_compression: true
+compression_stats: true  # Track compression ratios
+
+# Output paths
+output_dir: "reports"
+results_json: "reports/longbench_metrics.json"
+results_markdown: "reports/longbench_tables.md"
+
+# Device
+device: "cuda"  # Will be "cpu" for local development
+# TODO: Add device_map for multi-GPU
+
+# Reproducibility
+seed: 42
+deterministic: true
+
+# TODO: Add any other evaluation-specific parameters
+

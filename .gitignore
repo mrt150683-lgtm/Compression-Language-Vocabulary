@@ -1,6 +1,7 @@
 # User Global Rules
 *.sqlite
 *.db
+*.md
 /data
 /vault
 /backups

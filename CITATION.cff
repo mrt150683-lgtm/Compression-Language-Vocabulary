@@ -1,0 +1,13 @@
+# TODO: Complete citation metadata
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "TODO"
+    given-names: "TODO"
+title: "CLV-Lang: Compression Language Vocabulary for LLMs"
+version: "0.1.0"
+date-released: "TODO"
+doi: "TODO"
+repository-code: "TODO"
+license: "TODO"
+

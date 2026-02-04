@@ -1,0 +1,30 @@
+{
+  "baseline": {
+    "total_tokens": 790,
+    "total_time_sec": 0.24592208862304688,
+    "tokens_per_sec": 3212.3995222361827,
+    "ms_per_token": 0.31129378306714794,
+    "peak_memory_mb": 15110.0556640625,
+    "allocated_memory_mb": 15083.0400390625,
+    "mode": "baseline",
+    "num_texts": 10,
+    "num_runs": 5
+  },
+  "clv": {
+    "total_tokens": 790,
+    "total_time_sec": 0.34479260444641113,
+    "tokens_per_sec": 2291.2324388987427,
+    "ms_per_token": 0.4364463347422926,
+    "peak_memory_mb": 15256.00439453125,
+    "allocated_memory_mb": 15227.67236328125,
+    "mode": "clv",
+    "num_texts": 10,
+    "num_runs": 5
+  },
+  "improvement": {
+    "tokens_per_sec_delta": -921.1670833374401,
+    "tokens_per_sec_improvement_pct": -28.675358620904245,
+    "ms_per_token_reduction_pct": 28.675358620904245,
+    "meets_target": false
+  }
+}

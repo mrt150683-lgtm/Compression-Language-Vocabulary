@@ -1,0 +1,56 @@
+# Evaluation configuration for Needle-in-a-Haystack
+# TODO: Complete with actual evaluation parameters
+
+# Model configuration
+base_model_config: "configs/base_qwen2_7b.yaml"
+clv_adapter_path: "artifacts/clv_lora_adapter.pt"
+clv_map_path: "artifacts/clv_map.json"
+clv_tokenizer_path: "artifacts/clv_tokenizer_added.json"
+
+# Evaluation mode
+mode: "clv"  # Options: "baseline", "clv"
+# TODO: Add baseline model path if evaluating baseline separately
+
+# Needle-in-a-Haystack parameters
+context_length: 16384  # Fixed context size (16k tokens)
+# TODO: Also test at 32k for baseline comparison
+
+needle_position_range: [0.0, 1.0]  # Relative position in context
+num_needles: 1  # Number of key sentences to insert
+num_trials: 100  # TODO: Number of random trials per configuration
+
+# Synthetic document generation
+document_length_tokens: 15000  # TODO: Adjust to fit in context
+needle_sentence: ""  # TODO: Generate or specify key sentence
+distractor_text_source: ""  # TODO: Source for distractor text
+
+# Metrics
+metric: "exact_match"  # Whether model can recall the needle sentence
+# TODO: Add other metrics (position accuracy, etc.)
+
+# Generation parameters
+max_new_tokens: 100  # Short response for retrieval task
+temperature: 0.0  # Deterministic generation
+top_p: 1.0
+do_sample: false
+
+# Compression settings (for CLV mode)
+enable_compression: true
+compression_stats: true  # Track compression ratios
+
+# Output paths
+output_dir: "reports"
+results_json: "reports/needle_metrics.json"
+results_markdown: "reports/needle_tables.md"
+plots_dir: "reports/plots"
+
+# Device
+device: "cuda"  # Will be "cpu" for local development
+# TODO: Add device_map for multi-GPU
+
+# Reproducibility
+seed: 42
+deterministic: true
+
+# TODO: Add any other evaluation-specific parameters
+

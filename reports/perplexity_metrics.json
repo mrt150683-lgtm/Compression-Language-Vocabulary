@@ -1,0 +1,17 @@
+{
+  "baseline": {
+    "perplexity": 93.24937438964844,
+    "num_samples": 10,
+    "dataset": "wikitext",
+    "mode": "baseline"
+  },
+  "clv": {
+    "perplexity": 21486.818359375,
+    "num_samples": 10,
+    "dataset": "wikitext",
+    "mode": "lossless"
+  },
+  "delta_ppl": 21393.56898498535,
+  "delta_ppl_percent": 22942.31905041096,
+  "meets_target": false
+}

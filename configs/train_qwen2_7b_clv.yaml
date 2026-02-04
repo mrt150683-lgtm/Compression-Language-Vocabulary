@@ -1,0 +1,93 @@
+# Base
+run_name: qwen2-7b-clv-k8192
+seed: 1337
+output_dir: runs/qwen2_7b_clv_k8192
+hf_cache: /workspace/hf_cache
+
+# Data
+train_corpus_globs:
+  - data/corpus/**/*.jsonl
+  - data/corpus/**/*.txt
+phrase_index: data/phrase_index.jsonl
+clv_map: artifacts/clv_map.json        # used for codebook mode evals (optional)
+codebook: artifacts/clv_codebook.npy   # used for VQ init (optional)
+lossless: true                         # train with PID tokens present in tokenizer
+
+# Model
+# For smoke testing, use: Qwen/Qwen2-1.5B-Instruct
+# For production training, use: Qwen/Qwen2-7B-Instruct
+base_model_name: Qwen/Qwen2-7B-Instruct
+trust_remote_code: false
+
+# Tokenizer specials (PID range will be auto-added at runtime)
+add_clv_tokens: 8192
+add_pid_tokens: auto    # read max id from phrase_index
+
+# Train (LoRA + VQ bottleneck)
+bf16: true
+gradient_checkpointing: true
+per_device_train_batch_size: 2
+per_device_eval_batch_size: 2
+gradient_accumulation_steps: 8
+max_steps: 2000         # POC; bump when scaling
+warmup_steps: 100
+learning_rate: 1.5e-4
+weight_decay: 0.0
+adam_beta1: 0.9
+adam_beta2: 0.95
+adam_eps: 1.0e-8
+lr_scheduler_type: cosine
+logging_steps: 10
+eval_steps: 200
+save_steps: 200
+save_total_limit: 3
+
+# LoRA
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+  bias: none
+  task_type: CAUSAL_LM
+
+# VQ module (attached in forward pre-embed or post-embed as implemented)
+vq:
+  enabled: true
+  codebook_size: 8192
+  code_dim: 256
+  commitment_cost: 0.25
+  ema: false
+skip_vq_on_smoke: true  # Skip VQ setup during smoke tests for faster iteration
+
+# Packing / PID-aware collation
+max_seq_len: 8192
+pack_sequences: true
+pid_token_prefix: "<pid:"
+pid_token_width: 6
+
+# Evals
+run_eval: true
+eval_sets:
+  - type: perplexity
+    subset_limit: 2000
+    use_lossless: true
+  - type: needle
+    needles: 128
+    depth: [512, 2048, 4096, 8192]
+    use_lossless: true
+  - type: latency_cost
+    prompts_file: eval/prompts/sanity_20.jsonl
+    use_lossless: true
+
+# Accelerate/FS
+dataloader_num_workers: 4
+pin_memory: true
+torch_compile: false

@@ -1,0 +1,19 @@
+# Base model configuration for Qwen2-7B-Instruct
+# TODO: Complete with actual model paths and settings
+
+model_name: "Qwen/Qwen2-7B-Instruct"
+# TODO: Add model path if using local checkpoint
+# model_path: ""
+
+tokenizer_name: "Qwen/Qwen2-7B-Instruct"
+# TODO: Add tokenizer path if different from model
+
+# Model architecture settings
+# TODO: Add relevant architecture parameters if needed
+
+# Device settings
+device: "cuda"  # Will be "cpu" for local development
+# TODO: Add device_map settings for multi-GPU if needed
+
+# TODO: Add any other base model configuration parameters
+

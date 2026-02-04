@@ -1,0 +1,19 @@
+# CLV codebook configuration
+# TODO: Complete with actual codebook parameters
+
+codebook_size: 8000  # K: number of discrete codes
+code_dim: 256        # Dimension of code vectors
+
+# Clustering method
+clustering_method: "kmeans"  # Options: "kmeans", "faiss_kmeans"
+# TODO: Add faiss-specific parameters if using faiss
+
+# Codebook initialization
+# TODO: Add initialization strategy (random, kmeans++, etc.)
+
+# Output paths
+codebook_output: "artifacts/clv_codebook.npy"
+map_output: "artifacts/clv_map.json"
+
+# TODO: Add any other codebook-specific parameters
+

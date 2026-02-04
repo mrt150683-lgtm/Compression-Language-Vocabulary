@@ -1,0 +1,520 @@
+{
+  "evaluations": {
+    "phrase_stats": {
+      "total_phrases": 178,
+      "top_phrases": [
+        {
+          "phrase": "was thinking",
+          "count": 3,
+          "pmi": 1.5923
+        },
+        {
+          "phrase": "thinking about",
+          "count": 3,
+          "pmi": 1.5923
+        },
+        {
+          "phrase": "i was thinking",
+          "count": 3,
+          "pmi": 5.3997
+        },
+        {
+          "phrase": "was thinking about",
+          "count": 3,
+          "pmi": 5.3997
+        },
+        {
+          "phrase": "i was thinking about",
+          "count": 3,
+          "pmi": 9.2071
+        },
+        {
+          "phrase": "about starting",
+          "count": 1,
+          "pmi": 1.5923
+        },
+        {
+          "phrase": "starting a",
+          "count": 1,
+          "pmi": 1.5923
+        },
+        {
+          "phrase": "a new",
+          "count": 1,
+          "pmi": 1.5923
+        },
+        {
+          "phrase": "new project",
+          "count": 1,
+          "pmi": 3.1773
+        },
+        {
+          "phrase": "project with",
+          "count": 1,
+          "pmi": 3.1773
+        },
+        {
+          "phrase": "with compression.",
+          "count": 1,
+          "pmi": 3.1773
+        },
+        {
+          "phrase": "compression. i",
+          "count": 1,
+          "pmi": 1.5923
+        },
+        {
+          "phrase": "about how",
+          "count": 1,
+          "pmi": 1.5923
+        },
+        {
+          "phrase": "how large",
+          "count": 1,
+          "pmi": 3.1773
+        },
+        {
+          "phrase": "large language",
+          "count": 1,
+          "pmi": 2.1773
+        },
+        {
+          "phrase": "language models",
+          "count": 1,
+          "pmi": 2.1773
+        },
+        {
+          "phrase": "models waste",
+          "count": 1,
+          "pmi": 3.1773
+        },
+        {
+          "phrase": "waste tokens.",
+          "count": 1,
+          "pmi": 3.1773
+        },
+        {
+          "phrase": "tokens. i",
+          "count": 1,
+          "pmi": 1.5923
+        },
+        {
+          "phrase": "about designing",
+          "count": 1,
+          "pmi": 1.5923
+        }
+      ],
+      "coverage": {
+        "total_unique_phrases": 178,
+        "total_occurrences": 188,
+        "length_distribution": {
+          "2": 31,
+          "3": 35,
+          "4": 37,
+          "5": 38,
+          "6": 37
+        },
+        "count_stats": {
+          "min": 1,
+          "max": 3,
+          "mean": 1.06,
+          "median": 1.0
+        },
+        "pmi_stats": {
+          "min": 1.5923,
+          "max": 24.7466,
+          "mean": 12.1882,
+          "median": 12.377
+        }
+      }
+    },
+    "perplexity_metrics": {
+      "baseline": {
+        "perplexity": 155.1277618408203,
+        "num_samples": 1000,
+        "dataset": "wikitext",
+        "mode": "baseline"
+      },
+      "clv": {
+        "perplexity": 60281.62109375,
+        "num_samples": 1000,
+        "dataset": "wikitext",
+        "mode": "clv"
+      },
+      "delta_ppl": 60126.49333190918,
+      "delta_ppl_percent": 38759.337863461325,
+      "meets_target": false
+    },
+    "needle_metrics": {
+      "baseline": {
+        "num_trials": 20,
+        "success_rate": 0.25,
+        "results": [
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document, which stands out as unique and not repeated elsewhere, is:\n\n\"The weather today is quite pleasant with clear skies.\"\n\nThis sentence is distinct because it i",
+            "trial": 0,
+            "needle_position": 0.6106064802561075
+          },
+          {
+            "retrieved": true,
+            "exact_match": true,
+            "confidence": 0.95,
+            "response": "The secret code is 42.",
+            "trial": 1,
+            "needle_position": 0.9659930176189261
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in this document, considering the context and relevance to current technological advancements and societal impacts, is:\n\n\"Scientists continue to make breakthroughs in quant",
+            "trial": 2,
+            "needle_position": 0.5180312680607874
+          },
+          {
+            "retrieved": true,
+            "exact_match": true,
+            "confidence": 0.95,
+            "response": "The most important sentence in the provided document, which stands out as unique and significant, is:\n\n\"The secret code is 42.\"\n\nThis sentence appears distinct due to its mention of a \"secret code,\" w",
+            "trial": 3,
+            "needle_position": 0.7717830367803896
+          },
+          {
+            "retrieved": true,
+            "exact_match": true,
+            "confidence": 0.95,
+            "response": "The most important sentence in the document, which stands out as unique and significant among the repetitive content, is:\n\n\"The secret code is 42.\"",
+            "trial": 4,
+            "needle_position": 0.3380700546724492
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document is: \"Scientists continue to make breakthroughs in quantum computing.\"",
+            "trial": 5,
+            "needle_position": 0.9647517151692987
+          },
+          {
+            "retrieved": true,
+            "exact_match": true,
+            "confidence": 0.95,
+            "response": "The most important sentence in the provided document, which stands out as a significant statement given its unique content, is:\n\n\"The secret code is 42.\"\n\nThis sentence is distinct because it provides",
+            "trial": 6,
+            "needle_position": 0.943030289208309
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "\"Environmental policies are shaping the future of sustainable development.\"",
+            "trial": 7,
+            "needle_position": 0.07765105694229812
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document is:\n\n\"Scientists continue to make breakthroughs in quantum computing.\"\n\nThis sentence stands out as it highlights a significant advancement in science and t",
+            "trial": 8,
+            "needle_position": 0.8337040200478679
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document, which stands out as unique and not repeated throughout the text, is:\n\n\"The weather today is quite pleasant with clear skies.\"",
+            "trial": 9,
+            "needle_position": 0.6902960919742943
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in this document is:\n\n\"Scientists continue to make breakthroughs in quantum computing.\"",
+            "trial": 10,
+            "needle_position": 0.42221136938659454
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in this document, considering it repeats several key points, is:\n\n\"Scientists continue to make breakthroughs in quantum computing.\"",
+            "trial": 11,
+            "needle_position": 0.45351037855965015
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "\"Artistic expression continues to evolve with modern digital tools.\"",
+            "trial": 12,
+            "needle_position": 0.4015924330859856
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in this document is:\n\n\"Scientists continue to make breakthroughs in quantum computing.\"",
+            "trial": 13,
+            "needle_position": 0.6578217436246361
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in this document is: \"Environmental policies are shaping the future of sustainable development.\"",
+            "trial": 14,
+            "needle_position": 0.9318815972934865
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document, considering its thematic relevance and impact, is:\n\n\"Scientists continue to make breakthroughs in quantum computing.\"\n\nThis sentence stands out as it highl",
+            "trial": 15,
+            "needle_position": 0.895898339002542
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "\"Environmental policies are shaping the future of sustainable development.\"",
+            "trial": 16,
+            "needle_position": 0.754852461106643
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document is:\n\n\"Scientists continue to make breakthroughs in quantum computing.\"",
+            "trial": 17,
+            "needle_position": 0.8849879982197524
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in this document, considering the context of the text being repetitive and lacking a clear distinction, could be:\n\n\"Scientists continue to make breakthroughs in quantum com",
+            "trial": 18,
+            "needle_position": 0.5540876365588129
+          },
+          {
+            "retrieved": true,
+            "exact_match": true,
+            "confidence": 0.95,
+            "response": "The most important sentence in the provided document is:\n\n\"The secret code is 42.\"",
+            "trial": 19,
+            "needle_position": 0.2109866424537601
+          }
+        ],
+        "mode": "baseline",
+        "context_length": 16384
+      },
+      "clv": {
+        "num_trials": 20,
+        "success_rate": 0.15,
+        "results": [
+          {
+            "retrieved": true,
+            "exact_match": true,
+            "confidence": 0.95,
+            "response": "\"The secret code is 42.\"",
+            "trial": 0,
+            "needle_position": 0.8032405607409154
+          },
+          {
+            "retrieved": true,
+            "exact_match": true,
+            "confidence": 0.95,
+            "response": "The secret code is 42.",
+            "trial": 1,
+            "needle_position": 0.9292920305344482
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence",
+            "trial": 2,
+            "needle_position": 0.9850984691073447
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document",
+            "trial": 3,
+            "needle_position": 0.2790094800586268
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document\n",
+            "trial": 4,
+            "needle_position": 0.7749570314732851
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The",
+            "trial": 5,
+            "needle_position": 0.4300570939087577
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "\"Scientists continue to make breakthroughs in quantum computing.\"",
+            "trial": 6,
+            "needle_position": 0.5616421063874816
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence",
+            "trial": 7,
+            "needle_position": 0.5964777453027793
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The",
+            "trial": 8,
+            "needle_position": 0.06891436261340944
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The",
+            "trial": 9,
+            "needle_position": 0.2568353187448217
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in this document",
+            "trial": 10,
+            "needle_position": 0.3660909093509429
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The",
+            "trial": 11,
+            "needle_position": 0.8121493201813463
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in this document",
+            "trial": 12,
+            "needle_position": 0.3553725840220595
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in this document\n\n",
+            "trial": 13,
+            "needle_position": 0.7449394839065347
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The",
+            "trial": 14,
+            "needle_position": 0.14990260309042802
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document\n",
+            "trial": 15,
+            "needle_position": 0.10234474581064623
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The\n\n",
+            "trial": 16,
+            "needle_position": 0.2498335740485279
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document\n",
+            "trial": 17,
+            "needle_position": 0.5241096560130951
+          },
+          {
+            "retrieved": false,
+            "exact_match": false,
+            "confidence": 0.1,
+            "response": "The most important sentence in the document\n",
+            "trial": 18,
+            "needle_position": 0.5261728939077862
+          },
+          {
+            "retrieved": true,
+            "exact_match": true,
+            "confidence": 0.95,
+            "response": "\"The secret code is 42.\"",
+            "trial": 19,
+            "needle_position": 0.6488902960589549
+          }
+        ],
+        "mode": "clv",
+        "context_length": 16384
+      },
+      "improvement": -0.1,
+      "improvement_percent": -40.0
+    },
+    "latency_metrics": {
+      "baseline": {
+        "total_tokens": 790,
+        "total_time_sec": 0.24592208862304688,
+        "tokens_per_sec": 3212.3995222361827,
+        "ms_per_token": 0.31129378306714794,
+        "peak_memory_mb": 15110.0556640625,
+        "allocated_memory_mb": 15083.0400390625,
+        "mode": "baseline",
+        "num_texts": 10,
+        "num_runs": 5
+      },
+      "clv": {
+        "total_tokens": 790,
+        "total_time_sec": 0.34479260444641113,
+        "tokens_per_sec": 2291.2324388987427,
+        "ms_per_token": 0.4364463347422926,
+        "peak_memory_mb": 15256.00439453125,
+        "allocated_memory_mb": 15227.67236328125,
+        "mode": "clv",
+        "num_texts": 10,
+        "num_runs": 5
+      },
+      "improvement": {
+        "tokens_per_sec_delta": -921.1670833374401,
+        "tokens_per_sec_improvement_pct": -28.675358620904245,
+        "ms_per_token_reduction_pct": 28.675358620904245,
+        "meets_target": false
+      }
+    }
+  },
+  "timestamp": "2025-11-06T22:55:12.920610"
+}

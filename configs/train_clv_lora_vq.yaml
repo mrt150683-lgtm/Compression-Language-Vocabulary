@@ -1,0 +1,69 @@
+# Training configuration for CLV LoRA + VQ
+# TODO: Complete with actual training hyperparameters
+
+# Base model
+base_model_config: "configs/base_qwen2_7b.yaml"
+
+# CLV codebook
+codebook_config: "configs/clv_codebook.yaml"
+codebook_path: "artifacts/clv_codebook.npy"
+clv_map_path: "artifacts/clv_map.json"
+
+# LoRA settings
+lora_r: 16  # TODO: Tune this
+lora_alpha: 32  # TODO: Tune this
+lora_dropout: 0.1  # TODO: Tune this
+target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+# VQ module settings
+vq_layer: -2  # Layer L-2 (negative indexing from last layer)
+vq_code_dim: 256
+vq_codebook_size: 8000
+vq_commitment_cost: 0.25  # β in loss formula
+vq_ema_decay: 0.99  # TODO: Tune EMA decay
+
+# Training hyperparameters
+batch_size: 4  # TODO: Adjust for A100 80GB
+gradient_accumulation_steps: 8  # TODO: Adjust for effective batch size
+learning_rate: 2e-4  # TODO: Tune learning rate
+num_epochs: 3  # TODO: Determine appropriate number of epochs
+max_seq_length: 4096  # TODO: Adjust based on context window
+
+# Mixed precision
+fp16: true  # TODO: Consider bf16 for A100
+bf16: false
+
+# Optimization
+optimizer: "adamw"
+weight_decay: 0.01
+warmup_steps: 500  # TODO: Tune warmup
+
+# Loss weights
+lm_loss_weight: 1.0
+vq_loss_weight: 0.1  # TODO: Tune VQ loss weight
+
+# Dataset
+dataset_path: ""  # TODO: Add path to training dataset
+# TODO: Add dataset configuration (splits, preprocessing, etc.)
+
+# CLV replacement probability
+clv_replacement_prob: 0.4  # 40% of matching phrases replaced with <clv:####>
+
+# Output paths
+output_dir: "artifacts"
+adapter_output: "artifacts/clv_lora_adapter.pt"
+tokenizer_output: "artifacts/clv_tokenizer_added.json"
+vq_state_output: "artifacts/clv_vq_state.pt"
+
+# Logging
+logging_dir: "logs"
+wandb_project: "clv-lang"  # TODO: Configure wandb if using
+save_steps: 500
+eval_steps: 1000  # TODO: Configure evaluation during training
+
+# Reproducibility
+seed: 42
+deterministic: true
+
+# TODO: Add any other training-specific parameters
+

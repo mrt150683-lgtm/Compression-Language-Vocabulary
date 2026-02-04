@@ -1,0 +1,57 @@
+# Evaluation configuration for SCROLLS
+# TODO: Complete with actual evaluation parameters
+
+# Model configuration
+base_model_config: "configs/base_qwen2_7b.yaml"
+clv_adapter_path: "artifacts/clv_lora_adapter.pt"
+clv_map_path: "artifacts/clv_map.json"
+clv_tokenizer_path: "artifacts/clv_tokenizer_added.json"
+
+# Evaluation mode
+mode: "clv"  # Options: "baseline", "clv"
+# TODO: Add baseline model path if evaluating baseline separately
+
+# SCROLLS dataset
+dataset_name: "SCROLLS"  # TODO: Specify exact dataset name/version
+# TODO: Add dataset path or Hugging Face identifier
+dataset_split: "test"  # TODO: Specify split
+
+# Tasks to evaluate
+# TODO: Add specific SCROLLS tasks (GovReport, QMSum, etc.)
+tasks: []
+# Example:
+# tasks:
+#   - "gov_report"
+#   - "qmsum"
+#   - "summ_screen_fd"
+#   - "narrative_qa"
+
+# Metrics
+metrics: ["rouge", "f1"]  # ROUGE for summarization, F1 for QA
+# TODO: Add task-specific metrics
+
+# Generation parameters
+max_new_tokens: 512  # TODO: Adjust based on task
+temperature: 0.0  # Deterministic generation
+top_p: 1.0
+do_sample: false
+
+# Compression settings (for CLV mode)
+enable_compression: true
+compression_stats: true  # Track compression ratios
+
+# Output paths
+output_dir: "reports"
+results_json: "reports/scrolls_metrics.json"
+results_markdown: "reports/scrolls_tables.md"
+
+# Device
+device: "cuda"  # Will be "cpu" for local development
+# TODO: Add device_map for multi-GPU
+
+# Reproducibility
+seed: 42
+deterministic: true
+
+# TODO: Add any other evaluation-specific parameters
+
