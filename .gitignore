@@ -1,0 +1,37 @@
+# User Global Rules
+*.sqlite
+*.db
+/data
+/vault
+/backups
+logs/
+debug/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build/Dist
+dist/
+build/
+*.exe
+*.msi
+
+# Project Specific
+artifacts/
+mcp/
+mining/data/
+mining/logs/
+eval/results/
+training/checkpoints/
+training/logs/
