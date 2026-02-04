@@ -8,6 +8,6 @@ title: "CLV-Lang: Compression Language Vocabulary for LLMs"
 version: "0.1.0"
 date-released: "TODO"
 doi: "TODO"
-repository-code: "TODO"
-license: "TODO"
+repository-code: "https://github.com/mrt150683-lgtm/Compression-Language-Vocabulary"
+license: "Apache-2.0"
 
