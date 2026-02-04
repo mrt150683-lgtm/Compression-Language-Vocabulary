@@ -139,7 +139,7 @@ clv-lang/
 
 ## License
 
-# TODO: Add license information
+https://github.com/mrt150683-lgtm/Compression-Language-Vocabulary/blob/dev/LICENSE)
 
 ## Citation
 
